@@ -14,11 +14,12 @@
     
     self = [super init];
     
-    self.musicTitle = dictionary[@"title"];
+    self.musicTitle = dictionary[@"track_title"];
     
     self.musicArtist = dictionary[@"artist_name"];
     
     self.listenLink = dictionary[@"track_listen_url"];
+    
     return self;
 }
 @end

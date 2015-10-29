@@ -40,7 +40,12 @@ static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.js
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //Fetch data from server
     [self getMusicFromServer];
+    
+    // Set Delegate to self
+    self.sharedAPIManager.delegate = self;
     // Initalizes Singleton
     self.sharedManager = [RokMusicPlayer sharedCenter];
 }
@@ -95,11 +100,11 @@ static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.js
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ChooseMusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    ChooseMusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"musicCell"];
     
     Music *music = self.arrayOfMusic[indexPath.row];
     cell.titleLabel.text = music.musicTitle;
-    cell.titleLabel.text = music.musicArtist;
+    cell.artistLabel.text = music.musicArtist;
     return cell;
 }
 

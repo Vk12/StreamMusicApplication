@@ -19,6 +19,7 @@ static API *sharedAPICenter = nil;
 // Setting the delegate
 - (void) musicArrayReady:(NSMutableArray *)musicArray {
     [self.delegate musicArrayReady:musicArray];
+
 }
 + (API *)sharedCenter {
     if (sharedAPICenter == nil) {
@@ -59,7 +60,7 @@ static API *sharedAPICenter = nil;
                 Music *music = [[Music alloc]initMusicWithDic:dict];
                 [musicArray addObject:music];
                 [self.delegate musicArrayReady:musicArray];
-                NSLog(@"%@",music);
+                NSLog(@"%@",musicArray);
             }
             
             
