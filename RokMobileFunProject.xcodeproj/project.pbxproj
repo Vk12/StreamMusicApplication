@@ -71,6 +71,7 @@
 		09580E371BE1BA7000DA7A7E = {
 			isa = PBXGroup;
 			children = (
+				09580E4C1BE1BA7000DA7A7E /* Main.storyboard */,
 				09580E421BE1BA7000DA7A7E /* RokMobileFunProject */,
 				09580E411BE1BA7000DA7A7E /* Products */,
 				0794F2002CEC3DE6C9131966 /* Pods */,
@@ -89,8 +90,6 @@
 		09580E421BE1BA7000DA7A7E /* RokMobileFunProject */ = {
 			isa = PBXGroup;
 			children = (
-				09580E461BE1BA7000DA7A7E /* AppDelegate.h */,
-				09580E471BE1BA7000DA7A7E /* AppDelegate.m */,
 				09580E491BE1BA7000DA7A7E /* SelectMusicViewController.h */,
 				09580E4A1BE1BA7000DA7A7E /* SelectMusicViewController.m */,
 				09864AD61BE1C9B40041A5BF /* RokMusicPlayer.h */,
@@ -99,10 +98,8 @@
 				09D267601BE1DE6D009959C6 /* Music.m */,
 				09499D5B1BE201BA00C46908 /* API.h */,
 				09499D5C1BE201BA00C46908 /* API.m */,
-				09580E4C1BE1BA7000DA7A7E /* Main.storyboard */,
-				09580E4F1BE1BA7000DA7A7E /* Assets.xcassets */,
-				09580E511BE1BA7000DA7A7E /* LaunchScreen.storyboard */,
-				09580E541BE1BA7000DA7A7E /* Info.plist */,
+				09D2675C1BE1DCF3009959C6 /* ChooseMusicTableViewCell.h */,
+				09D2675D1BE1DCF3009959C6 /* ChooseMusicTableViewCell.m */,
 				09580E431BE1BA7000DA7A7E /* Supporting Files */,
 			);
 			path = RokMobileFunProject;
@@ -111,9 +108,12 @@
 		09580E431BE1BA7000DA7A7E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				09D2675C1BE1DCF3009959C6 /* ChooseMusicTableViewCell.h */,
-				09D2675D1BE1DCF3009959C6 /* ChooseMusicTableViewCell.m */,
+				09580E461BE1BA7000DA7A7E /* AppDelegate.h */,
+				09580E471BE1BA7000DA7A7E /* AppDelegate.m */,
 				09580E441BE1BA7000DA7A7E /* main.m */,
+				09580E4F1BE1BA7000DA7A7E /* Assets.xcassets */,
+				09580E541BE1BA7000DA7A7E /* Info.plist */,
+				09580E511BE1BA7000DA7A7E /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -267,6 +267,7 @@
 				09580E4D1BE1BA7000DA7A7E /* Base */,
 			);
 			name = Main.storyboard;
+			path = RokMobileFunProject;
 			sourceTree = "<group>";
 		};
 		09580E511BE1BA7000DA7A7E /* LaunchScreen.storyboard */ = {

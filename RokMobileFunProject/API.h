@@ -8,13 +8,19 @@
 
 #import <Foundation/Foundation.h>
 @class API;
+
 // Set API Delegate
 @protocol APIDelegate <NSObject>
 - (void) musicArrayReady:(NSMutableArray *)musicArray;
 @end
+
 @interface API : NSObject
 
+//Properties
 @property (nonatomic, weak) id <APIDelegate> delegate;
+
+//Methods
 + (API *)sharedCenter;
+
 -(void)getMusicFromServer;
 @end

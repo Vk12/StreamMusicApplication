@@ -21,6 +21,8 @@ static API *sharedAPICenter = nil;
     [self.delegate musicArrayReady:musicArray];
 
 }
+
+// Creating a shared singleton object
 + (API *)sharedCenter {
     if (sharedAPICenter == nil) {
         sharedAPICenter = [[super allocWithZone:NULL] init];

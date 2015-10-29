@@ -13,10 +13,6 @@
 #import "RokMusicPlayer.h"
 #import "API.h"
 
-
-// Set a static string for music
-static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.json";
-
 @interface SelectMusicViewController () <UITableViewDataSource, UITableViewDelegate, APIDelegate>
 
 ///////////////////////////
@@ -34,9 +30,12 @@ static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.js
 @property NSMutableArray *arrayOfMusic;
 @property RokMusicPlayer *sharedManager;
 @property API *sharedAPIManager;
+@property Music *music;
+@property NSString *selectedSong;
 @end
 
 @implementation SelectMusicViewController
+@synthesize delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,6 +48,11 @@ static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.js
     // Initalizes Singleton
     self.sharedManager = [RokMusicPlayer sharedCenter];
 }
+
+- (void) newSongSelected:(NSString *)songSelected {
+    [self newSongSelected:songSelected];
+}
+
 ////////////////////////////////////////
 // MARK: Requesting JSON from server
 ////////////////////////////////////////
@@ -84,7 +88,7 @@ static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.js
 
 // Plays music and changes button's title to "Pause"
 -(void) playMusic {
-    [self.sharedManager playMusic];
+    [self.sharedManager playMusicWithString:self.selectedSong];
     [self.playButton setTitle:@"Pause" forState:UIControlStateNormal];
 }
 
@@ -102,9 +106,9 @@ static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.js
     
     ChooseMusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"musicCell"];
     
-    Music *music = self.arrayOfMusic[indexPath.row];
-    cell.titleLabel.text = music.musicTitle;
-    cell.artistLabel.text = music.musicArtist;
+    self.music = self.arrayOfMusic[indexPath.row];
+    cell.titleLabel.text = self.music.musicTitle;
+    cell.artistLabel.text = self.music.musicArtist;
     return cell;
 }
 
@@ -115,10 +119,10 @@ static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.js
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //TODO: Depending on song, segue to music vc
-    
-//    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"playMusicViewController"];
-//    vc.theSong = self.arrayOfMusic[indexPath.row];
-//    [self presentViewController:vc animated:true completion:nil];
+    self.music = self.arrayOfMusic[indexPath.row];
+    self.selectedSong = [NSString stringWithFormat:@"%@",self.music.listenLink];
+    NSLog(@"%@",self.selectedSong);
+    [self.delegate newSongSelected:self.selectedSong];
     
 }
 

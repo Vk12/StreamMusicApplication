@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-@interface SelectMusicViewController : UIViewController
+@protocol SelectMusicDelegate <NSObject>
+- (void) newSongSelected:(NSString *)songSelected;
+@end
 
+@interface SelectMusicViewController : UIViewController
+@property (nonatomic, weak) id <SelectMusicDelegate> delegate;
 @property AVPlayer *player;
 @end
 

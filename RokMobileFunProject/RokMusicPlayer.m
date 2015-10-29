@@ -8,7 +8,8 @@
 
 #import "RokMusicPlayer.h"
 
-@implementation RokMusicPlayer
+
+@implementation RokMusicPlayer 
 
 static RokMusicPlayer *sharedMusicCenter = nil;
 
@@ -23,13 +24,22 @@ static RokMusicPlayer *sharedMusicCenter = nil;
 - (id)init {
     if ( (self = [super init]) ) {
         self.isPlaying = NO;
+        self.selectMusicViewController.delegate = self;
+        
     }
     return self;
 }
 
+- (void)newSongSelected:(NSString *)songSelected {
+
+    self.selectedSong = songSelected;
+    [self playMusicWithString:self.selectedSong];
+}
+
 // Plays music on the player
-- (void)playMusic {
-    NSURL *streamingURL = [NSURL URLWithString:MusicURLString];
+- (void)playMusicWithString:(NSString *)selectedSongUrl {
+    [_player pause];
+    NSURL *streamingURL = [NSURL URLWithString:selectedSongUrl];
     _player = [AVPlayer playerWithURL:streamingURL];
     [_player play];
     self.isPlaying = YES;
@@ -46,7 +56,7 @@ static RokMusicPlayer *sharedMusicCenter = nil;
     if (self.isPlaying == YES) {
         [self pauseMusic];
     } else {
-        [self playMusic];
+        [self playMusicWithString:nil];
     }
 }
 
