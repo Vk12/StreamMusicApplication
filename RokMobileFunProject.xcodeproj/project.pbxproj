@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		09580E451BE1BA7000DA7A7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09580E441BE1BA7000DA7A7E /* main.m */; };
 		09580E481BE1BA7000DA7A7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09580E471BE1BA7000DA7A7E /* AppDelegate.m */; };
-		09580E4B1BE1BA7000DA7A7E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09580E4A1BE1BA7000DA7A7E /* ViewController.m */; };
+		09580E4B1BE1BA7000DA7A7E /* SelectMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09580E4A1BE1BA7000DA7A7E /* SelectMusicViewController.m */; };
 		09580E4E1BE1BA7000DA7A7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09580E4C1BE1BA7000DA7A7E /* Main.storyboard */; };
 		09580E501BE1BA7000DA7A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09580E4F1BE1BA7000DA7A7E /* Assets.xcassets */; };
 		09580E531BE1BA7000DA7A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09580E511BE1BA7000DA7A7E /* LaunchScreen.storyboard */; };
+		09864AD01BE1C1AA0041A5BF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09864ACF1BE1C1AA0041A5BF /* AVFoundation.framework */; };
+		09864AD81BE1C9B40041A5BF /* RokMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09864AD71BE1C9B40041A5BF /* RokMusicPlayer.m */; };
+		62190BEE4E2AE4432C6A1428 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E682BB00CC8D1EC789908E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +23,18 @@
 		09580E441BE1BA7000DA7A7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09580E461BE1BA7000DA7A7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		09580E471BE1BA7000DA7A7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		09580E491BE1BA7000DA7A7E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		09580E4A1BE1BA7000DA7A7E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		09580E491BE1BA7000DA7A7E /* SelectMusicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectMusicViewController.h; sourceTree = "<group>"; };
+		09580E4A1BE1BA7000DA7A7E /* SelectMusicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectMusicViewController.m; sourceTree = "<group>"; };
 		09580E4D1BE1BA7000DA7A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09580E4F1BE1BA7000DA7A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09580E521BE1BA7000DA7A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09580E541BE1BA7000DA7A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09864ACF1BE1C1AA0041A5BF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		09864AD61BE1C9B40041A5BF /* RokMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RokMusicPlayer.h; sourceTree = "<group>"; };
+		09864AD71BE1C9B40041A5BF /* RokMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RokMusicPlayer.m; sourceTree = "<group>"; };
+		2ED5EC1344F9DA2A5EC1A5F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E4E682BB00CC8D1EC789908E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEBB80DA00CE76808B6FE85C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +42,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09864AD01BE1C1AA0041A5BF /* AVFoundation.framework in Frameworks */,
+				62190BEE4E2AE4432C6A1428 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0794F2002CEC3DE6C9131966 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2ED5EC1344F9DA2A5EC1A5F5 /* Pods.debug.xcconfig */,
+				EEBB80DA00CE76808B6FE85C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		09580E371BE1BA7000DA7A7E = {
 			isa = PBXGroup;
 			children = (
 				09580E421BE1BA7000DA7A7E /* RokMobileFunProject */,
 				09580E411BE1BA7000DA7A7E /* Products */,
+				0794F2002CEC3DE6C9131966 /* Pods */,
+				C7F12EDC1F2157C98B6EDE6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +82,10 @@
 			children = (
 				09580E461BE1BA7000DA7A7E /* AppDelegate.h */,
 				09580E471BE1BA7000DA7A7E /* AppDelegate.m */,
-				09580E491BE1BA7000DA7A7E /* ViewController.h */,
-				09580E4A1BE1BA7000DA7A7E /* ViewController.m */,
+				09580E491BE1BA7000DA7A7E /* SelectMusicViewController.h */,
+				09580E4A1BE1BA7000DA7A7E /* SelectMusicViewController.m */,
+				09864AD61BE1C9B40041A5BF /* RokMusicPlayer.h */,
+				09864AD71BE1C9B40041A5BF /* RokMusicPlayer.m */,
 				09580E4C1BE1BA7000DA7A7E /* Main.storyboard */,
 				09580E4F1BE1BA7000DA7A7E /* Assets.xcassets */,
 				09580E511BE1BA7000DA7A7E /* LaunchScreen.storyboard */,
@@ -79,6 +103,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C7F12EDC1F2157C98B6EDE6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09864ACF1BE1C1AA0041A5BF /* AVFoundation.framework */,
+				E4E682BB00CC8D1EC789908E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09580E571BE1BA7000DA7A7E /* Build configuration list for PBXNativeTarget "RokMobileFunProject" */;
 			buildPhases = (
+				DCF16E1AC423B5519512A0D5 /* Check Pods Manifest.lock */,
 				09580E3C1BE1BA7000DA7A7E /* Sources */,
 				09580E3D1BE1BA7000DA7A7E /* Frameworks */,
 				09580E3E1BE1BA7000DA7A7E /* Resources */,
+				3397B1F64FAC41A574A8AF99 /* Embed Pods Frameworks */,
+				3E6CC0F70990E9831860AE3D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,13 +180,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3397B1F64FAC41A574A8AF99 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E6CC0F70990E9831860AE3D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCF16E1AC423B5519512A0D5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		09580E3C1BE1BA7000DA7A7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09580E4B1BE1BA7000DA7A7E /* ViewController.m in Sources */,
+				09580E4B1BE1BA7000DA7A7E /* SelectMusicViewController.m in Sources */,
 				09580E481BE1BA7000DA7A7E /* AppDelegate.m in Sources */,
+				09864AD81BE1C9B40041A5BF /* RokMusicPlayer.m in Sources */,
 				09580E451BE1BA7000DA7A7E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +346,7 @@
 		};
 		09580E581BE1BA7000DA7A7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ED5EC1344F9DA2A5EC1A5F5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RokMobileFunProject/Info.plist;
@@ -272,6 +358,7 @@
 		};
 		09580E591BE1BA7000DA7A7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEBB80DA00CE76808B6FE85C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RokMobileFunProject/Info.plist;
@@ -300,6 +387,7 @@
 				09580E591BE1BA7000DA7A7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
