@@ -15,6 +15,8 @@
 		09580E531BE1BA7000DA7A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09580E511BE1BA7000DA7A7E /* LaunchScreen.storyboard */; };
 		09864AD01BE1C1AA0041A5BF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09864ACF1BE1C1AA0041A5BF /* AVFoundation.framework */; };
 		09864AD81BE1C9B40041A5BF /* RokMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 09864AD71BE1C9B40041A5BF /* RokMusicPlayer.m */; };
+		09D2675E1BE1DCF3009959C6 /* ChooseMusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D2675D1BE1DCF3009959C6 /* ChooseMusicTableViewCell.m */; };
+		09D267611BE1DE6D009959C6 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D267601BE1DE6D009959C6 /* Music.m */; };
 		62190BEE4E2AE4432C6A1428 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E682BB00CC8D1EC789908E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,10 @@
 		09864ACF1BE1C1AA0041A5BF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		09864AD61BE1C9B40041A5BF /* RokMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RokMusicPlayer.h; sourceTree = "<group>"; };
 		09864AD71BE1C9B40041A5BF /* RokMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RokMusicPlayer.m; sourceTree = "<group>"; };
+		09D2675C1BE1DCF3009959C6 /* ChooseMusicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseMusicTableViewCell.h; sourceTree = "<group>"; };
+		09D2675D1BE1DCF3009959C6 /* ChooseMusicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseMusicTableViewCell.m; sourceTree = "<group>"; };
+		09D2675F1BE1DE6D009959C6 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		09D267601BE1DE6D009959C6 /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
 		2ED5EC1344F9DA2A5EC1A5F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E4E682BB00CC8D1EC789908E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBB80DA00CE76808B6FE85C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +92,8 @@
 				09580E4A1BE1BA7000DA7A7E /* SelectMusicViewController.m */,
 				09864AD61BE1C9B40041A5BF /* RokMusicPlayer.h */,
 				09864AD71BE1C9B40041A5BF /* RokMusicPlayer.m */,
+				09D2675F1BE1DE6D009959C6 /* Music.h */,
+				09D267601BE1DE6D009959C6 /* Music.m */,
 				09580E4C1BE1BA7000DA7A7E /* Main.storyboard */,
 				09580E4F1BE1BA7000DA7A7E /* Assets.xcassets */,
 				09580E511BE1BA7000DA7A7E /* LaunchScreen.storyboard */,
@@ -98,6 +106,8 @@
 		09580E431BE1BA7000DA7A7E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				09D2675C1BE1DCF3009959C6 /* ChooseMusicTableViewCell.h */,
+				09D2675D1BE1DCF3009959C6 /* ChooseMusicTableViewCell.m */,
 				09580E441BE1BA7000DA7A7E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -233,8 +243,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09D2675E1BE1DCF3009959C6 /* ChooseMusicTableViewCell.m in Sources */,
 				09580E4B1BE1BA7000DA7A7E /* SelectMusicViewController.m in Sources */,
 				09580E481BE1BA7000DA7A7E /* AppDelegate.m in Sources */,
+				09D267611BE1DE6D009959C6 /* Music.m in Sources */,
 				09864AD81BE1C9B40041A5BF /* RokMusicPlayer.m in Sources */,
 				09580E451BE1BA7000DA7A7E /* main.m in Sources */,
 			);
