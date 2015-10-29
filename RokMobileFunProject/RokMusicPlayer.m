@@ -22,14 +22,16 @@ static RokMusicPlayer *sharedMusicCenter = nil;
 // Init the singleton
 - (id)init {
     if ( (self = [super init]) ) {
-        // your custom initialization
+        self.isPlaying = NO;
     }
     return self;
 }
 
 // Plays music on the player
 - (void)playMusic {
-    [self.player play];
+    NSURL *streamingURL = [NSURL URLWithString:MusicURLString];
+    _player = [AVPlayer playerWithURL:streamingURL];
+    [_player play];
     self.isPlaying = YES;
 }
 

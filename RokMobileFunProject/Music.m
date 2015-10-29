@@ -2,7 +2,7 @@
 //  Music.m
 //  RokMobileFunProject
 //
-//  Created by Rostin Kohnechi on 10/28/15.
+//  Created by Vala Kohnechi on 10/28/15.
 //  Copyright © 2015 Vala Kohnechi. All rights reserved.
 //
 
@@ -16,8 +16,9 @@
     
     self.musicTitle = dictionary[@"title"];
     
-    self.musicTitle = dictionary[@"artist"];
+    self.musicArtist = dictionary[@"artist_name"];
     
+    self.listenLink = dictionary[@"track_listen_url"];
     return self;
 }
 @end

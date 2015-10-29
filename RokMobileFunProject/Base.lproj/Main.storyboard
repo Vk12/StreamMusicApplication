@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Choose Music-->
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jXh-va-10b">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jXh-va-10b">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -25,22 +26,33 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u5H-bm-yb4" id="c8H-xy-loQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TitleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2S1-t6-Bwz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TitleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2S1-t6-Bwz">
                                                     <rect key="frame" x="8" y="8" width="304" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ArtistLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPr-FT-3GB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ArtistLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPr-FT-3GB">
                                                     <rect key="frame" x="8" y="37" width="83" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="rRh-6c-IWS"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2S1-t6-Bwz" firstAttribute="top" secondItem="c8H-xy-loQ" secondAttribute="topMargin" id="2z3-eC-iA4"/>
+                                                <constraint firstItem="yPr-FT-3GB" firstAttribute="top" secondItem="2S1-t6-Bwz" secondAttribute="bottom" constant="8" symbolic="YES" id="7gq-Jb-j3a"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yPr-FT-3GB" secondAttribute="bottom" constant="19.5" id="HZa-GT-z9Q"/>
+                                                <constraint firstItem="2S1-t6-Bwz" firstAttribute="leading" secondItem="yPr-FT-3GB" secondAttribute="leading" id="TZl-hv-ZxT"/>
+                                                <constraint firstItem="2S1-t6-Bwz" firstAttribute="leading" secondItem="c8H-xy-loQ" secondAttribute="leadingMargin" id="nay-4U-YyP"/>
+                                                <constraint firstItem="2S1-t6-Bwz" firstAttribute="trailing" secondItem="c8H-xy-loQ" secondAttribute="trailingMargin" id="zgj-Wm-6pi"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="artistLabel" destination="yPr-FT-3GB" id="ywb-rL-Q11"/>
@@ -53,7 +65,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="TuW-0T-4q8"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW7-Af-uEe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW7-Af-uEe">
                                 <rect key="frame" x="97" y="511" width="127" height="30"/>
                                 <color key="backgroundColor" red="0.32964877777582013" green="0.59821831878556009" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Play">
@@ -65,6 +77,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZW7-Af-uEe" secondAttribute="bottom" constant="27" id="FYh-Lk-kjw"/>
+                            <constraint firstItem="ZW7-Af-uEe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="81" id="J9d-q5-9fp"/>
+                            <constraint firstAttribute="trailing" secondItem="jXh-va-10b" secondAttribute="trailing" id="hIq-jc-p2A"/>
+                            <constraint firstItem="ZW7-Af-uEe" firstAttribute="top" secondItem="jXh-va-10b" secondAttribute="bottom" constant="31" id="lom-0D-W07"/>
+                            <constraint firstItem="jXh-va-10b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nxM-8n-P3Z"/>
+                            <constraint firstItem="jXh-va-10b" firstAttribute="centerX" secondItem="ZW7-Af-uEe" secondAttribute="centerX" id="sKi-mN-qFN"/>
+                            <constraint firstItem="jXh-va-10b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tbp-P2-JPm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Choose Music" id="Fjl-ew-r9C"/>
                     <connections>

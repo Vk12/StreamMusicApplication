@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09499D5D1BE201BA00C46908 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 09499D5C1BE201BA00C46908 /* API.m */; };
 		09580E451BE1BA7000DA7A7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09580E441BE1BA7000DA7A7E /* main.m */; };
 		09580E481BE1BA7000DA7A7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09580E471BE1BA7000DA7A7E /* AppDelegate.m */; };
 		09580E4B1BE1BA7000DA7A7E /* SelectMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09580E4A1BE1BA7000DA7A7E /* SelectMusicViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09499D5B1BE201BA00C46908 /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		09499D5C1BE201BA00C46908 /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		09580E401BE1BA7000DA7A7E /* RokMobileFunProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RokMobileFunProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09580E441BE1BA7000DA7A7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09580E461BE1BA7000DA7A7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				09864AD71BE1C9B40041A5BF /* RokMusicPlayer.m */,
 				09D2675F1BE1DE6D009959C6 /* Music.h */,
 				09D267601BE1DE6D009959C6 /* Music.m */,
+				09499D5B1BE201BA00C46908 /* API.h */,
+				09499D5C1BE201BA00C46908 /* API.m */,
 				09580E4C1BE1BA7000DA7A7E /* Main.storyboard */,
 				09580E4F1BE1BA7000DA7A7E /* Assets.xcassets */,
 				09580E511BE1BA7000DA7A7E /* LaunchScreen.storyboard */,
@@ -248,6 +253,7 @@
 				09580E481BE1BA7000DA7A7E /* AppDelegate.m in Sources */,
 				09D267611BE1DE6D009959C6 /* Music.m in Sources */,
 				09864AD81BE1C9B40041A5BF /* RokMusicPlayer.m in Sources */,
+				09499D5D1BE201BA00C46908 /* API.m in Sources */,
 				09580E451BE1BA7000DA7A7E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

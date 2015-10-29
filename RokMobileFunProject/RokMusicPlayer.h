@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-
+static NSString * const MusicURLString = @"http://www.radiobrasov.ro/listen.m3u";
 @interface RokMusicPlayer : NSObject
 @property BOOL isPlaying;
 @property AVPlayer *player;
+
 + (RokMusicPlayer *)sharedCenter;   // class method to return the singleton object
 
 - (void)playMusic;

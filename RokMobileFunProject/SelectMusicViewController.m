@@ -11,10 +11,13 @@
 #import "Music.h"
 #import "ChooseMusicTableViewCell.h"
 #import "RokMusicPlayer.h"
+#import "API.h"
+
+
 // Set a static string for music
 static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.json";
 
-@interface SelectMusicViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface SelectMusicViewController () <UITableViewDataSource, UITableViewDelegate, APIDelegate>
 
 ///////////////////////////
 //IBOUtlets
@@ -30,73 +33,47 @@ static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.js
 
 @property NSMutableArray *arrayOfMusic;
 @property RokMusicPlayer *sharedManager;
+@property API *sharedAPIManager;
 @end
 
 @implementation SelectMusicViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    NSURL *streamingURL = [NSURL URLWithString:@"http://www.radiobrasov.ro/listen.m3u"];
-//    NSLog(@"%@", streamingURL);
-//    _player = [AVPlayer playerWithURL:streamingURL];
-//    [_player play];
-//    _player.actionAtItemEnd = AVPlayerActionAtItemEndNone;
-////    [self getMusicFromServer];
-    
+    [self getMusicFromServer];
+    // Initalizes Singleton
     self.sharedManager = [RokMusicPlayer sharedCenter];
 }
+////////////////////////////////////////
+// MARK: Requesting JSON from server
+////////////////////////////////////////
 
-// Receives JSON response from server
+- (void)musicArrayReady:(NSMutableArray *)musicArray {
+    self.arrayOfMusic = musicArray;
+//    NSLog(@"%@",musicArray);
+    [self.listMusicTableView reloadData];
+}
+
 - (void)getMusicFromServer {
     
-    NSURL *url = [NSURL URLWithString:BaseURLString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        // Get json response
-        
-        NSDictionary *music = (NSDictionary *)responseObject;
-        
-        NSLog(@"%@",music);
-        
-//        NSMutableArray *resultsArray = [[NSMutableArray alloc]init];
-//        resultsArray = responseObject;
-        
-//        for (NSDictionary *dict in music) {
-//            Music *music = [[Music alloc]initMusicWithDic:dict];
-//            [self.arrayOfMusic addObject:music];
-//        }
-//        
-        // Set title of viewcontroller when JSON received
-        self.title = @"JSON Retrieved";
-        
-        // Reloads Tableview
-        [self.listMusicTableView reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        // Prints error message if failed to retrieve JSON from server
-        NSLog(@"%@",error);
-    }];
-    
-    [operation start];
-    
+    self.sharedAPIManager = [API sharedCenter];
 }
-- (IBAction)playButtonTapped:(UIButton *)sender {
 
+// MARK: Music Play/Pause
+
+// Toggles when button playButton pressed
+- (IBAction)playButtonTapped:(UIButton *)sender {
+    
     [self toggle];
 }
 
+// Toggles music on and off depending on state
 -(void) toggle {
     
-    if (self.sharedManager.currentlyPlayingMusic == YES) {
-        [self playMusic];
-    } else {
+    if (self.sharedManager.currentlyPlayingMusic) {
         [self pauseMusic];
+    } else {
+        [self playMusic];
     }
 }
 
@@ -111,6 +88,10 @@ static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.js
     [self.sharedManager pauseMusic];
     [self.playButton setTitle:@"Play" forState:UIControlStateNormal];
 }
+
+////////////////////////
+//MARK: UITableview Delegates
+////////////////////////
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -128,15 +109,14 @@ static NSString * const BaseURLString = @"https://freemusicarchive.org/recent.js
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //TODO: Depending on song, segue to music vc
     
-//    NSString *streamingString = [NSString stringWithFormat:@"%@.json?client_id=fc886d005e29ba78f046e5474e3fdefb", [self.arrayOfMusic objectAtIndex:indexPath.row]];
-  
+//    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"playMusicViewController"];
+//    vc.theSong = self.arrayOfMusic[indexPath.row];
+//    [self presentViewController:vc animated:true completion:nil];
     
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-}
 
 
 @end
